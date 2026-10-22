@@ -74,6 +74,15 @@ nav a{background:linear-gradient(#2c211d,#0a090c);border:1px solid #a9844a;color
 <label for="friendAvg">Geschätzte Münzen je zufälliger Freundesfee (2–8)</label><input id="friendAvg" type="number" min="2" max="8" step="0.5" value="3">
 <div class="pass-rewards"><h3>🪙 Astral-Pass-Belohnungen</h3><p class="hint">Wähle dein aktuelles Pass-Level. Hake die Münzen ab, die du bereits abgeholt hast. Noch nicht erreichte Stufen werden automatisch als zukünftig erspielbar gezählt. Gratis-Münzen zählen zusätzlich zu Premium oder Deluxe.</p><label for="passLevel">Aktuelles Pass-Level</label><select id="passLevel"><option value="0">Noch unter Level 5</option></select><div id="passRewardsGrid"></div><p class="hint" id="passSummary" aria-live="polite"></p></div>
 </section>
+<section class="card" id="shop"><h2>🛍️ Astral-Shop-Wunschliste</h2><p class="hint">Wähle deine gewünschten Artikel direkt aus dem aktuellen Shop. Die Preise werden automatisch übernommen. Bereits gekaufte Artikel einfach abwählen. Deine Auswahl bleibt auf deinem Gerät gespeichert.</p><div id="items" class="shop-grid"></div></section>
+<section class="card" id="prognose"><h2>✨ Deine Prognose</h2><div class="grid">
+<div class="stat">Geplante eigene Feen<b id="own">–</b></div><div class="stat">Freundesfeen<b id="friendTotal">–</b></div>
+<div class="stat">Münzen aus Feen<b id="earned">–</b></div><div class="stat">Pass-Belohnungen<b id="rewards">–</b></div></div>
+<p>Voraussichtliches Endguthaben</p><div class="big" id="total">–</div>
+<div class="row"><span>Wunschliste</span><b id="target">–</b></div><meter id="progress" min="0" max="100" value="0"></meter>
+<p id="result" aria-live="polite"></p><aside id="parkingTip" class="parking-tip" hidden><h3>🧚‍♀️ Bienchen-Tipp: Feen parken!</h3><p>Wenn du deinen Wunsch im aktuellen Astral-Shop nicht mehr erreichen kannst, kannst du deine Feen <strong>parken</strong>, statt sie zu entsenden.</p><p><strong>Vor dem Astral-Shopwechsel:</strong> Hole auch noch offene Pass-Belohnungen nicht ab. Warte damit bis zum Währungsumtausch für den neuen Astralzeitraum.</p><p class="hint">Hinweis: Die Prognose ist eine Schätzung. Prüfe zuerst, ob du mit einer anderen Feen-Strategie dein Ziel doch noch erreichst.</p></aside>
+<p class="hint">Die Prognose setzt voraus, dass du die eingetragenen Feen täglich sammelst. Freundesfeen sind Schätzwerte. Pass-Belohnungen werden nur berücksichtigt, wenn du sie als noch erspielbar markierst.</p>
+<button id="copy" type="button">📋 Ergebnis kopieren</button></section>
 <section class="card" id="parken"><h2>🧚‍♀️ Feenpark-Rechner</h2>
 <p class="hint">Wie viele Feen hast du bereits für später gesammelt? Trage die Anzahl pro Farbe ein. Wir berechnen den Münzwert <strong>ohne Wochenbonus</strong>. Die geparkten Feen werden nicht zusätzlich zur täglichen Astral-Prognose gezählt.</p>
 <div class="grid">
@@ -84,15 +93,6 @@ nav a{background:linear-gradient(#2c211d,#0a090c);border:1px solid #a9844a;color
 <div class="park-result" aria-live="polite"><span class="hint">Wert deiner geparkten Feen</span><strong class="big" id="parkCoins">0 🪙</strong><span class="hint" id="parkDetails">0 Feen insgesamt</span></div>
 <p class="hint">Deine Eingaben bleiben auf diesem Gerät gespeichert.</p>
 </section>
-<section class="card" id="shop"><h2>🛍️ Astral-Shop-Wunschliste</h2><p class="hint">Wähle deine gewünschten Artikel direkt aus dem aktuellen Shop. Die Preise werden automatisch übernommen. Bereits gekaufte Artikel einfach abwählen. Deine Auswahl bleibt auf deinem Gerät gespeichert.</p><div id="items" class="shop-grid"></div></section>
-<section class="card" id="prognose"><h2>✨ Deine Prognose</h2><div class="grid">
-<div class="stat">Geplante eigene Feen<b id="own">–</b></div><div class="stat">Freundesfeen<b id="friendTotal">–</b></div>
-<div class="stat">Münzen aus Feen<b id="earned">–</b></div><div class="stat">Pass-Belohnungen<b id="rewards">–</b></div></div>
-<p>Voraussichtliches Endguthaben</p><div class="big" id="total">–</div>
-<div class="row"><span>Wunschliste</span><b id="target">–</b></div><meter id="progress" min="0" max="100" value="0"></meter>
-<p id="result" aria-live="polite"></p><aside id="parkingTip" class="parking-tip" hidden><h3>🧚‍♀️ Bienchen-Tipp: Feen parken!</h3><p>Wenn du deinen Wunsch im aktuellen Astral-Shop nicht mehr erreichen kannst, kannst du deine Feen <strong>parken</strong>, statt sie zu entsenden.</p><p><strong>Vor dem Astral-Shopwechsel:</strong> Hole auch noch offene Pass-Belohnungen nicht ab. Warte damit bis zum Währungsumtausch für den neuen Astralzeitraum.</p><p class="hint">Hinweis: Die Prognose ist eine Schätzung. Prüfe zuerst, ob du mit einer anderen Feen-Strategie dein Ziel doch noch erreichst.</p></aside>
-<p class="hint">Die Prognose setzt voraus, dass du die eingetragenen Feen täglich sammelst. Freundesfeen sind Schätzwerte. Pass-Belohnungen werden nur berücksichtigt, wenn du sie als noch erspielbar markierst.</p>
-<button id="copy" type="button">📋 Ergebnis kopieren</button></section>
 <section class="card"><h2>🐝 Bald für die Bienchenfarm</h2><p class="hint">Astralblumen-Bilder, aktuelle Wochenboni, gemeinsamer Shop und geschützter Admin-Bereich folgen.</p></section>
 <footer>Inoffizielle Bienchenfarm-Fanseite zu The Cozy Florist 🐝</footer>
 </main><script>
